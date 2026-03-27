@@ -1,6 +1,9 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export default function Navigation() {
   const pathname = usePathname()
@@ -15,11 +18,14 @@ export default function Navigation() {
   return (
     <header className="w-full bg-white sticky top-0 z-50">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 h-24 flex items-center justify-between">
-        <Link
-          href="/"
-          className="text-[#12254c] font-bold text-lg tracking-[-0.02em] hover:opacity-70 transition-opacity"
-        >
-          taehy
+        <Link href="/" className="hover:opacity-70 transition-opacity">
+          <Image
+            src={`${BASE}/images/logo_home.png`}
+            alt="taehy"
+            width={80}
+            height={26}
+            className="h-[26px] w-auto"
+          />
         </Link>
         <nav className="flex items-center gap-6 sm:gap-8">
           <Link href="/" className={linkClass('/')}>Works</Link>
