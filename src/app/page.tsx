@@ -2,10 +2,12 @@ import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 const works = [
   {
     id: 1,
-    image: '/images/LVLM.jpg',
+    image: `${BASE}/images/LVLM.jpg`,
     title: 'LVLM기반 AI와 함께 쇼핑하기',
     description:
       'AI가 나의 시선과 행동을 모두 이해하는 미래는 어떤 세상일까요?\n본 연구는 MR공간인터페이스 상호작용 설계방식을 제시합니다.',
@@ -14,7 +16,7 @@ const works = [
   },
   {
     id: 2,
-    image: '/images/DRT.jpg',
+    image: `${BASE}/images/DRT.jpg`,
     title: 'DRT호출 서비스 개선: 셔클 앱',
     description:
       '대중교통 사각지대 사용자들의 행태를 연구하고\n음성안내 신규 서비스를 제시합니다.',
@@ -23,7 +25,7 @@ const works = [
   },
   {
     id: 3,
-    image: '/images/DX.jpg',
+    image: `${BASE}/images/DX.jpg`,
     title: 'DX를 위한 신제품개발 프로세스 개편',
     description:
       "기획한 제품을 '고객데이터'로부터 검증하기 위한 가이드라인을 제시하였습니다.\n제품 스펙 결정 전, 마지막으로 잠재고객과 만나는 단계에서 활용되고 있습니다.",
@@ -32,7 +34,7 @@ const works = [
   },
   {
     id: 4,
-    image: '/images/TW.jpg',
+    image: `${BASE}/images/TW.jpg`,
     title: '소셜페이 결제세션 촉진: 트래블월렛',
     description:
       '신규서비스 사용자들의 문제를 연구하고\n지도기반 가맹점 정보제공 서비스를 고객데이터를 기반으로 제시합니다.',

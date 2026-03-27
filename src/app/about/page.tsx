@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 const Divider = () => <hr className="border-t border-[#d9d9d9] my-12 sm:my-16" />
 
 export default function About() {
@@ -27,7 +29,7 @@ export default function About() {
             {/* Profile photo */}
             <div className="relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] lg:w-[286px] lg:h-[286px] flex-shrink-0 rounded-2xl overflow-hidden self-center sm:self-start">
               <Image
-                src="/images/Profile.jpg"
+                src={`${BASE}/images/Profile.jpg`}
                 alt="이태희 프로필 사진"
                 fill
                 className="object-cover"

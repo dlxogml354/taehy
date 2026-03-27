@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   basePath: '/taehy',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: '/taehy',
+  },
 }
 
 export default nextConfig
