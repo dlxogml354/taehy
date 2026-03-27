@@ -3,7 +3,9 @@ export default function Footer() {
     <footer className="w-full bg-white border-t border-[#d9d9d9]">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 py-12 sm:py-16 flex items-center justify-between">
         <a
-          href="#"
+          href="https://www.linkedin.com/in/taehylee/"
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label="LinkedIn"
           className="text-[#838383] hover:text-[#2b2f31] transition-colors"
         >
