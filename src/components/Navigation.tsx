@@ -7,30 +7,34 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export default function Navigation() {
   const pathname = usePathname()
+  const isHome = pathname === '/'
 
-  const linkClass = (path: string) => {
-    const isActive = path === '/' ? pathname === '/' : pathname.startsWith(path)
-    return `text-base sm:text-lg tracking-[-0.02em] hover:opacity-70 transition-opacity ${
-      isActive ? 'text-[#12254c] font-bold' : 'text-[#2b2f31] font-normal'
-    }`
-  }
+  const navLinkClass =
+    'text-[18px] font-normal text-[#3d3e3f] leading-[24px] tracking-[-0.36px] hover:opacity-60 transition-opacity'
 
   return (
     <header className="w-full bg-white sticky top-0 z-50">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 h-24 flex items-center justify-between">
+      <div className="w-full px-[64px] py-[24px] flex items-center justify-between">
+        {/* Logo */}
         <Link href="/" className="hover:opacity-70 transition-opacity">
           <Image
             src={`${BASE}/images/logo_home.png`}
             alt="taehy"
-            width={80}
-            height={26}
-            className="h-[26px] w-auto"
+            width={69}
+            height={24}
+            className="h-[24px] w-auto"
           />
         </Link>
-        <nav className="flex items-center gap-6 sm:gap-8">
-          <Link href="/" className={linkClass('/')}>Works</Link>
-          <Link href="/studies" className={linkClass('/studies')}>Studies</Link>
-          <Link href="/about" className={linkClass('/about')}>About</Link>
+
+        {/* Nav links */}
+        <nav className="flex items-center gap-[128px]">
+          {isHome ? (
+            <a href="#works" className={navLinkClass}>Works</a>
+          ) : (
+            <Link href="/#works" className={navLinkClass}>Works</Link>
+          )}
+          <Link href="/studies" className={navLinkClass}>Studies</Link>
+          <Link href="/about" className={navLinkClass}>About</Link>
         </nav>
       </div>
     </header>
