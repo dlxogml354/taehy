@@ -7,10 +7,17 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export default function Navigation() {
   const pathname = usePathname()
-  const isHome = pathname === '/'
 
-  const navLinkClass =
-    'text-[18px] font-normal text-[#3d3e3f] leading-[24px] tracking-[-0.36px] hover:opacity-60 transition-opacity'
+  const isHome = pathname === '/'
+  const isStudies = pathname === '/studies' || pathname === '/studies/'
+  const isAbout = pathname === '/about' || pathname === '/about/'
+
+  const linkClass = (active: boolean) =>
+    `text-[18px] leading-[24px] tracking-[-0.36px] hover:opacity-60 transition-opacity ${
+      active
+        ? 'font-bold text-[#12254c]'
+        : 'font-normal text-[#3d3e3f]'
+    }`
 
   return (
     <header className="w-full bg-white sticky top-0 z-50">
@@ -29,12 +36,12 @@ export default function Navigation() {
         {/* Nav links */}
         <nav className="flex items-center gap-[128px]">
           {isHome ? (
-            <a href="#works" className={navLinkClass}>Works</a>
+            <a href="#works" className={linkClass(false)}>Works</a>
           ) : (
-            <Link href="/#works" className={navLinkClass}>Works</Link>
+            <Link href="/#works" className={linkClass(false)}>Works</Link>
           )}
-          <Link href="/studies" className={navLinkClass}>Studies</Link>
-          <Link href="/about" className={navLinkClass}>About</Link>
+          <Link href="/studies" className={linkClass(isStudies)}>Studies</Link>
+          <Link href="/about" className={linkClass(isAbout)}>About</Link>
         </nav>
       </div>
     </header>
