@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import VisitorTracker from '@/components/VisitorTracker'
 
 export const metadata: Metadata = {
   title: 'taehy space',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className="bg-white text-dark antialiased">{children}</body>
+      <body className="bg-white text-dark antialiased">
+        <VisitorTracker />
+        {children}
+      </body>
     </html>
   )
 }
