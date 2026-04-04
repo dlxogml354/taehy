@@ -1,8 +1,9 @@
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { supabase, type Post } from '@/lib/supabase'
+import Link from 'next/link'
 
-export const revalidate = 60 // re-fetch every 60 seconds
+export const revalidate = 60
 
 async function getPosts(): Promise<Post[]> {
   const { data, error } = await supabase
@@ -13,6 +14,10 @@ async function getPosts(): Promise<Post[]> {
 
   if (error) return []
   return data || []
+}
+
+function stripHtml(html: string): string {
+  return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim().slice(0, 180)
 }
 
 export default async function Studies() {
@@ -41,21 +46,23 @@ export default async function Studies() {
         </section>
       ) : (
         posts.map((post) => (
-          <section key={post.id} className="w-full px-[64px] pb-[48px]">
-            <div className="flex flex-col gap-[8px]">
-              <h2 className="text-[#1e1e1e] font-bold text-[32px] leading-[40px] tracking-[-0.64px]">
-                {post.title}
-              </h2>
-              <div className="flex flex-col gap-[24px]">
-                <p className="text-[#5c5e60] font-normal text-[18px] leading-[24px] tracking-[-0.36px] whitespace-pre-line">
-                  {post.content}
-                </p>
-                <p className="text-[#949697] font-normal text-[14px] leading-[20px] tracking-[-0.28px]">
-                  {post.date_label}
-                </p>
+          <Link key={post.id} href={`/studies/${post.id}`} className="block group">
+            <section className="w-full px-[64px] pb-[48px]">
+              <div className="flex flex-col gap-[8px]">
+                <h2 className="text-[#1e1e1e] font-bold text-[32px] leading-[40px] tracking-[-0.64px] group-hover:text-[#12254d] transition-colors">
+                  {post.title}
+                </h2>
+                <div className="flex flex-col gap-[24px]">
+                  <p className="text-[#5c5e60] font-normal text-[18px] leading-[24px] tracking-[-0.36px] line-clamp-3">
+                    {stripHtml(post.content)}{stripHtml(post.content).length >= 180 ? '...' : ''}
+                  </p>
+                  <p className="text-[#949697] font-normal text-[14px] leading-[20px] tracking-[-0.28px]">
+                    {post.date_label}
+                  </p>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </Link>
         ))
       )}
 

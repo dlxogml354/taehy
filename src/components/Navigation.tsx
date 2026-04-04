@@ -9,7 +9,7 @@ export default function Navigation() {
   const pathname = usePathname()
 
   const isHome = pathname === '/'
-  const isStudies = pathname === '/studies' || pathname === '/studies/'
+  const isStudies = pathname === '/studies' || pathname === '/studies/' || pathname.startsWith('/studies/')
   const isAbout = pathname === '/about' || pathname === '/about/'
 
   const linkClass = (active: boolean) =>

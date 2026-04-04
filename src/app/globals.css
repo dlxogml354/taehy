@@ -18,3 +18,23 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Rich text content rendering */
+.rich-content {
+  color: #3d3e3f;
+  font-size: 16px;
+  line-height: 1.75;
+  letter-spacing: -0.32px;
+  word-break: break-word;
+}
+.rich-content p { margin-bottom: 16px; }
+.rich-content strong, .rich-content b { font-weight: 700; color: #1e1e1e; }
+.rich-content u { text-decoration: underline; }
+.rich-content img { max-width: 100%; height: auto; display: block; margin: 24px 0; border-radius: 8px; }
+
+/* Placeholder for contentEditable */
+[contenteditable][data-placeholder]:empty:before {
+  content: attr(data-placeholder);
+  color: #c0c0c0;
+  pointer-events: none;
+}
