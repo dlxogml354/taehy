@@ -28,35 +28,35 @@ export default async function Studies() {
       <Navigation />
 
       {/* ── Hero ── */}
-      <section className="w-full px-[64px] pt-[180px] pb-[60px]">
-        <h1 className="text-[#12254d] font-[900] text-[96px] leading-[112px] tracking-[-1.92px]">
+      <section className="w-full px-4 sm:px-8 lg:px-[64px] pt-[80px] sm:pt-[120px] lg:pt-[180px] pb-8 sm:pb-10 lg:pb-[60px]">
+        <h1 className="text-[#12254d] font-[900] text-[40px] leading-[48px] sm:text-[64px] sm:leading-[76px] lg:text-[96px] lg:leading-[112px] tracking-[-1.92px]">
           Studies
         </h1>
       </section>
 
       {/* ── Border ── */}
-      <div className="w-full px-[64px] pb-[48px]">
+      <div className="w-full px-4 sm:px-8 lg:px-[64px] pb-6 sm:pb-[48px]">
         <hr className="border-0 border-t border-[#d9d9d9]" />
       </div>
 
       {/* ── Posts ── */}
       {posts.length === 0 ? (
-        <section className="w-full px-[64px] pb-[48px]">
-          <p className="text-[#949697] text-[18px]">아직 게시물이 없어요.</p>
+        <section className="w-full px-4 sm:px-8 lg:px-[64px] pb-8 sm:pb-[48px]">
+          <p className="text-[#949697] text-[15px] sm:text-[18px]">아직 게시물이 없어요.</p>
         </section>
       ) : (
         posts.map((post) => (
           <Link key={post.id} href={`/studies/${post.id}`} className="block group">
-            <section className="w-full px-[64px] pb-[48px]">
+            <section className="w-full px-4 sm:px-8 lg:px-[64px] pb-8 sm:pb-[48px]">
               <div className="flex flex-col gap-[8px]">
-                <h2 className="text-[#1e1e1e] font-bold text-[32px] leading-[40px] tracking-[-0.64px] group-hover:text-[#12254d] transition-colors">
+                <h2 className="text-[#1e1e1e] font-bold text-[20px] leading-[28px] sm:text-[28px] sm:leading-[36px] lg:text-[32px] lg:leading-[40px] tracking-[-0.64px] group-hover:text-[#12254d] transition-colors">
                   {post.title}
                 </h2>
-                <div className="flex flex-col gap-[24px]">
-                  <p className="text-[#5c5e60] font-normal text-[18px] leading-[24px] tracking-[-0.36px] line-clamp-3">
+                <div className="flex flex-col gap-4 sm:gap-[24px]">
+                  <p className="text-[#5c5e60] font-normal text-[14px] leading-[22px] sm:text-[18px] sm:leading-[24px] tracking-[-0.36px] line-clamp-3">
                     {stripHtml(post.content)}{stripHtml(post.content).length >= 180 ? '...' : ''}
                   </p>
-                  <p className="text-[#949697] font-normal text-[14px] leading-[20px] tracking-[-0.28px]">
+                  <p className="text-[#949697] font-normal text-[13px] leading-[20px] sm:text-[14px] tracking-[-0.28px]">
                     {post.date_label}
                   </p>
                 </div>

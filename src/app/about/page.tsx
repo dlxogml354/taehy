@@ -10,35 +10,35 @@ export default function About() {
       <Navigation />
 
       {/* ── Hero ── */}
-      <section className="w-full px-[64px] pt-[132px] pb-[108px] flex items-center justify-between">
+      <section className="w-full px-4 sm:px-8 lg:px-[64px] pt-[80px] sm:pt-[132px] pb-10 sm:pb-[108px] flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-8 sm:gap-0">
         {/* Title */}
-        <h1 className="text-[#12254d] font-[900] text-[96px] leading-[112px] tracking-[-1.92px] w-[300px]">
+        <h1 className="text-[#12254d] font-[900] text-[48px] leading-[56px] sm:text-[72px] sm:leading-[84px] lg:text-[96px] lg:leading-[112px] tracking-[-1.92px]">
           About
         </h1>
         {/* Profile photo */}
-        <div className="relative w-[286px] h-[286px] flex-shrink-0 overflow-hidden rounded-[12px]">
+        <div className="relative w-[160px] h-[160px] sm:w-[286px] sm:h-[286px] flex-shrink-0 overflow-hidden rounded-[12px]">
           <Image
             src={`${BASE}/images/Profile.jpg`}
             alt="이태희 프로필 사진"
             fill
             className="object-cover object-top"
-            sizes="286px"
+            sizes="(max-width: 640px) 160px, 286px"
           />
         </div>
       </section>
 
       {/* ── Border ── */}
-      <div className="w-full px-[64px] pb-[48px]">
+      <div className="w-full px-4 sm:px-8 lg:px-[64px] pb-8 sm:pb-[48px]">
         <hr className="border-0 border-t border-[#d9d9d9]" />
       </div>
 
       {/* ── Contents 1: Discover problems ── */}
-      <section className="w-full px-[64px] pb-[48px]">
+      <section className="w-full px-4 sm:px-8 lg:px-[64px] pb-8 sm:pb-[48px]">
         <div className="flex flex-col gap-[24px]">
-          <h2 className="text-[#1e1e1e] font-bold text-[32px] leading-[40px] tracking-[-0.64px]">
+          <h2 className="text-[#1e1e1e] font-bold text-[20px] leading-[28px] sm:text-[28px] sm:leading-[36px] lg:text-[32px] lg:leading-[40px] tracking-[-0.64px]">
             🤔 Discover problems in real field where products are used.
           </h2>
-          <div className="text-[#5c5e60] font-normal text-[18px] leading-[24px] tracking-[-0.36px]">
+          <div className="text-[#5c5e60] font-normal text-[15px] leading-[24px] sm:text-[18px] sm:leading-[28px] tracking-[-0.36px]">
             <p>I'm an UX Designer with over two years of experience.</p>
             <p>I believe in going beyond discovering user problems through data — observing the full user experience(UX) firsthand in the environments where products are actually used.</p>
             <p>I have broad experience across mobile, web, hardware, and mixed reality (MR).</p>
@@ -52,12 +52,12 @@ export default function About() {
       </section>
 
       {/* ── Contents 2: Ability ── */}
-      <section className="w-full px-[64px] pb-[48px]">
+      <section className="w-full px-4 sm:px-8 lg:px-[64px] pb-8 sm:pb-[48px]">
         <div className="flex flex-col gap-[24px]">
-          <h2 className="text-[#1e1e1e] font-bold text-[32px] leading-[40px] tracking-[-0.64px]">
+          <h2 className="text-[#1e1e1e] font-bold text-[20px] leading-[28px] sm:text-[28px] sm:leading-[36px] lg:text-[32px] lg:leading-[40px] tracking-[-0.64px]">
             🛠️ Ability:
           </h2>
-          <div className="text-[#5c5e60] font-normal text-[18px] leading-[24px] tracking-[-0.36px]">
+          <div className="text-[#5c5e60] font-normal text-[15px] leading-[24px] sm:text-[18px] sm:leading-[28px] tracking-[-0.36px]">
             <p>[Design]</p>
             <p>Product Requirement Document, Functional Specification, Survey Design, Experimental Design, User Research,</p>
             <p>User flow, Journey Mapping, A/B Testing, Wireframing, Prototyping, Low-High Fidelity Mockups</p>
