@@ -37,61 +37,40 @@ export default function Home() {
       <Navigation />
 
       {/* ── Hero ── */}
-      <section className="w-full px-[64px] pt-[180px] pb-[60px]">
+      <section className="w-full px-4 sm:px-8 lg:px-[64px] pt-[80px] sm:pt-[120px] lg:pt-[180px] pb-8 sm:pb-10 lg:pb-[60px]">
         <div className="flex flex-col gap-[16px]">
-          <h1 className="text-[#12254d] font-[900] text-[96px] leading-[112px] tracking-[-1.92px]">
+          <h1 className="text-[#12254d] font-[900] text-[40px] leading-[48px] sm:text-[64px] sm:leading-[76px] lg:text-[96px] lg:leading-[112px] tracking-[-1.92px]">
             UX Researcher
           </h1>
-          <p className="text-[#12254d] font-normal text-[28px] leading-[40px] tracking-[-0.56px]">
-            who have been researching HCI in hardware and Augmented Reality,<br />
+          <p className="text-[#12254d] font-normal text-[15px] leading-[24px] sm:text-[20px] sm:leading-[32px] lg:text-[28px] lg:leading-[40px] tracking-[-0.56px]">
+            who have been researching HCI in hardware and Augmented Reality,{' '}
+            <br className="hidden sm:inline" />
             extending beyond mobile and the web.
           </p>
         </div>
       </section>
 
-      {/* ── Works Row 1 ── */}
-      <section id="works" className="w-full px-[64px] pb-[64px] flex gap-[40px]">
-        {works.slice(0, 2).map((work) => (
-          <div key={work.id} className="flex flex-col gap-[16px] flex-1 cursor-pointer group">
-            <div className="relative w-full h-[478px] overflow-hidden">
+      {/* ── Works Grid ── */}
+      <section
+        id="works"
+        className="w-full px-4 sm:px-8 lg:px-[64px] pb-8 sm:pb-10 lg:pb-[64px] grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-[40px]"
+      >
+        {works.map((work) => (
+          <div key={work.id} className="flex flex-col gap-[16px] cursor-pointer group">
+            <div className="relative w-full h-[220px] sm:h-[340px] lg:h-[478px] overflow-hidden">
               <Image
                 src={work.image}
                 alt={work.title}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                sizes="50vw"
+                sizes="(max-width: 640px) 100vw, 50vw"
               />
             </div>
             <div className="flex flex-col gap-[8px]">
-              <h3 className="text-[#1e1e1e] font-bold text-[24px] leading-[32px] tracking-[-0.48px]">
+              <h3 className="text-[#1e1e1e] font-bold text-[18px] leading-[26px] sm:text-[20px] sm:leading-[28px] lg:text-[24px] lg:leading-[32px] tracking-[-0.48px]">
                 {work.title}
               </h3>
-              <p className="text-[#5c5e60] font-normal text-[20px] leading-[28px] tracking-[-0.4px]">
-                {work.description}
-              </p>
-            </div>
-          </div>
-        ))}
-      </section>
-
-      {/* ── Works Row 2 ── */}
-      <section className="w-full px-[64px] pb-[64px] flex gap-[40px]">
-        {works.slice(2, 4).map((work) => (
-          <div key={work.id} className="flex flex-col gap-[16px] flex-1 cursor-pointer group">
-            <div className="relative w-full h-[478px] overflow-hidden">
-              <Image
-                src={work.image}
-                alt={work.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                sizes="50vw"
-              />
-            </div>
-            <div className="flex flex-col gap-[8px]">
-              <h3 className="text-[#1e1e1e] font-bold text-[24px] leading-[32px] tracking-[-0.48px]">
-                {work.title}
-              </h3>
-              <p className="text-[#5c5e60] font-normal text-[20px] leading-[28px] tracking-[-0.4px]">
+              <p className="text-[#5c5e60] font-normal text-[13px] leading-[20px] sm:text-[16px] sm:leading-[24px] lg:text-[20px] lg:leading-[28px] tracking-[-0.4px]">
                 {work.description}
               </p>
             </div>

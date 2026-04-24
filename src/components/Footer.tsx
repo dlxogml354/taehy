@@ -4,7 +4,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white px-[64px] pt-[320px] pb-[64px]">
+    <footer className="w-full bg-white px-4 sm:px-8 lg:px-[64px] pt-16 sm:pt-32 lg:pt-[320px] pb-8 sm:pb-[64px]">
       <div className="flex items-center justify-between">
         {/* Social icons */}
         <div className="flex items-center gap-[40px]">

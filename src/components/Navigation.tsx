@@ -13,7 +13,7 @@ export default function Navigation() {
   const isAbout = pathname === '/about' || pathname === '/about/'
 
   const linkClass = (active: boolean) =>
-    `text-[18px] leading-[24px] tracking-[-0.36px] hover:opacity-60 transition-opacity ${
+    `text-[15px] sm:text-[18px] leading-[24px] tracking-[-0.36px] hover:opacity-60 transition-opacity py-3 sm:py-0 inline-block ${
       active
         ? 'font-bold text-[#12254c]'
         : 'font-normal text-[#3d3e3f]'
@@ -21,7 +21,7 @@ export default function Navigation() {
 
   return (
     <header className="w-full bg-white sticky top-0 z-50">
-      <div className="w-full px-[64px] py-[24px] flex items-center justify-between">
+      <div className="w-full px-4 sm:px-8 lg:px-[64px] py-3 sm:py-[24px] flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="hover:opacity-70 transition-opacity">
           <Image
@@ -29,12 +29,12 @@ export default function Navigation() {
             alt="taehy"
             width={69}
             height={24}
-            className="h-[24px] w-auto"
+            className="h-[20px] sm:h-[24px] w-auto"
           />
         </Link>
 
         {/* Nav links */}
-        <nav className="flex items-center gap-[128px]">
+        <nav className="flex items-center gap-6 sm:gap-12 lg:gap-[128px]">
           {isHome ? (
             <a href="#works" className={linkClass(false)}>Works</a>
           ) : (
