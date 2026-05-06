@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import GlobeWidget from '@/components/GlobeWidget'
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
@@ -37,7 +38,8 @@ export default function Home() {
       <Navigation />
 
       {/* ── Hero ── */}
-      <section className="w-full px-4 sm:px-8 lg:px-[64px] pt-[80px] sm:pt-[120px] lg:pt-[180px] pb-8 sm:pb-10 lg:pb-[60px]">
+      <section className="relative w-full px-4 sm:px-8 lg:px-[64px] pt-[80px] sm:pt-[120px] lg:pt-[180px] pb-8 sm:pb-10 lg:pb-[60px]">
+        <GlobeWidget />
         <div className="flex flex-col gap-[16px]">
           <h1 className="text-[#12254d] font-[900] text-[40px] leading-[48px] sm:text-[64px] sm:leading-[76px] lg:text-[96px] lg:leading-[112px] tracking-[-1.92px]">
             UX Researcher
